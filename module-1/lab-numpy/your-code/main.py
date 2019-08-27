@@ -43,7 +43,7 @@ print("No, you cannot because altough they have the same size the structures are
 
 #9. Transpose b so that it has the same structure of a (i.e. become a 2x3x5 array). Assign the transposed array to varialbe "c".
 
-c = np.reshape(b,(2,3,5))
+c = np.transpose(b,(1,2,0))
 
 
 print(c)
