@@ -4,8 +4,8 @@ import cv2
 # Global variables
 RANDOM_SEED = 2017
 
-FRAMES_PER_VIDEO = 50
-IMAGE_SIZE = 150
+FRAMES_PER_VIDEO = 100
+IMAGE_SIZE = 100
 
 SAVE_DIR = os.path.join(os.getcwd(), 'saved_models')
 CRAPPY_MODEL = 'crappy_model.h5'
