@@ -14,27 +14,50 @@ top_model = load_model(os.path.join(CONST.SAVE_DIR,CONST.BOTTLENECK_MODEL))
 
 labels = [x for x in os.listdir('./dataset') if not x.startswith(".")]
 
-def predictImage(imagepath):
-    image = cv2.imread(imagepath)
+def predictImage(x):
+    image = cv2.imread('test_data/{}.jpg'.format(str(x)))
     frame2 = cv2.resize(image, (CONST.IMAGE_SIZE, CONST.IMAGE_SIZE))
     frame2 = img_to_array(frame2)
     frame2 = np.array(frame2, dtype="float32") / 255
     y_pred = top_model.predict_classes(model.predict(frame2[None,:,:,:]))
-    return y_pred
+    return x
 
-predictImage(input("\nPath to image: "))
+x = predictImage(input("\nImage number: "))
 
 
-print("\nImporting preferences and calibrating virtual environment...")
-time.sleep(2)
-mixer.init()
-mixer.music.load('sounds/jarvis_uploaded.wav')
-mixer.music.play()
+if int(x) == 1:
+    print("\nImporting preferences and calibrating virtual environment...")
+    time.sleep(2)
+    mixer.init()
+    mixer.music.load('sounds/jarvis_uploaded.wav')
+    mixer.music.play()
+if int(x) == 2:
+    os.system('spotify open')
+if int(x) == 3:
+    os.system('spotify play uri spotify:track:08mG3Y1vljYA6bvDt4Wqkj')
 
-predictImage(input("\nPath to image: "))
+x = predictImage(input("\nImage number: "))
 
-os.system('spotify open')
+if int(x) == 1:
+    print("\nImporting preferences and calibrating virtual environment...")
+    time.sleep(2)
+    mixer.init()
+    mixer.music.load('sounds/jarvis_uploaded.wav')
+    mixer.music.play()
+if int(x) == 2:
+    os.system('spotify open')
+if int(x) == 3:
+    os.system('spotify play uri spotify:track:08mG3Y1vljYA6bvDt4Wqkj')
 
-predictImage(input("\nPath to image: "))
+x = predictImage(input("\nImage number: "))
 
-os.system('spotify play uri spotify:track:08mG3Y1vljYA6bvDt4Wqkj')
+if int(x) == 1:
+    print("\nImporting preferences and calibrating virtual environment...")
+    time.sleep(2)
+    mixer.init()
+    mixer.music.load('sounds/jarvis_uploaded.wav')
+    mixer.music.play()
+if int(x) == 2:
+    os.system('spotify open')
+if int(x) == 3:
+    os.system('spotify play uri spotify:track:08mG3Y1vljYA6bvDt4Wqkj')
